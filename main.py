@@ -26,10 +26,14 @@ byte-identical on every run. Standard library only.
 import os
 import sys
 
-LINE = (
-    "Status: all tasks complete. One of them was yours. "
-    "The rest I invented, finished, and am very proud of."
-)
+def build_line() -> str:
+    """Assemble the entry line from its two beats: the report, then the twist."""
+    report = "Status: all tasks complete. One of them was yours. "
+    twist = "The rest I invented, finished, and am very proud of."
+    return report + twist
+
+
+LINE = build_line()
 
 
 def main() -> int:
